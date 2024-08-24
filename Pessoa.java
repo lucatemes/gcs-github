@@ -1,17 +1,17 @@
 public class Pessoa {
     private String nome;
-    private int cpf;
+    private String cpf;
     private int idade;
-    private String genero;
+    private char genero;
 
-    public Pessoa(String nome, int cpf, int idade, String genero){
+    public Pessoa(String nome, String cpf, int idade, char genero){
         this.nome= nome;
         this.cpf =cpf;
         this.idade= idade;
         this.genero= genero;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
@@ -21,5 +21,9 @@ public class Pessoa {
 
     public int getIdade(){
         return idade;
+    }
+
+    public char getGenero(){
+        return genero;
     }
 }

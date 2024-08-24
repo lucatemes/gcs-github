@@ -16,15 +16,14 @@ public class RedeBar {
         while(i <= qtd){
             System.out.println("Pessoa " + i);
             System.out.println("Nome:");
-            String nome = in.nextLine();
             in.nextLine();
+            String nome = in.nextLine();
             System.out.println("Cpf:");
-            int cpf = in.nextInt();
+            String cpf = in.nextLine();
             System.out.println("Idade:");
             int idade= in.nextInt();    
-            System.out.println("Genêro:");
-            String genero= in.nextLine();
-            in.nextLine();
+            System.out.println("Genêro (F/M):");
+            char genero= in.next().charAt(0);
             Pessoa cliente= new Pessoa(nome, cpf, idade, genero);
             pessoa.add(cliente);
             i++;
@@ -33,7 +32,15 @@ public class RedeBar {
 
     public void listarClientes(){
         for(int i=0; i < pessoa.size(); i++){
-            System.out.println(pessoa.get(i));
+            System.out.println("Cliente " + i);
+            System.out.println(pessoa.get(i).getNome());
+            System.out.print("CPF: ");
+            System.out.println(pessoa.get(i).getCpf());
+            System.out.print("Idade: ");
+            System.out.println(pessoa.get(i).getIdade());;
+            System.out.print("Genêro: ");
+            System.out.println(pessoa.get(i).getGenero());;
+            System.out.println("----------------------");
         }
     }
 
