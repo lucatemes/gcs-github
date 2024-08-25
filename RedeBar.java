@@ -78,5 +78,26 @@ public class RedeBar {
         
     }
 
+    public void divisaoPorGenero(){
+        int m= 0;
+        int f= 0;
+        int total= 0;
+        int porcentagemM;
+        int porcentagemF;
+        for(Pessoa lista : pessoa){
+            if(lista.getGenero() == 'M'){
+                m++;
+            }else{
+                f++;
+            }
+        }
+        total = m + f;
+        porcentagemM= (100 * m) / total;
+        porcentagemF= 100 - porcentagemM;
+
+        System.out.println("Clientes masculinos: " + porcentagemM + "%");
+        System.out.println("Clientes femininos: " + porcentagemF + "%");
+    }
+
 
 }

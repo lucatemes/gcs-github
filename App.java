@@ -16,12 +16,12 @@ public class App{
         int rodando= 1;
 
         while (rodando == 1) {
+            System.out.println("0 - Sair do menu.");
             System.out.println("1 - Entrar no bar:");
             System.out.println("2 - Listar clientes:");
             System.out.println("3 - Buscar por CPF:");
             System.out.println("4 - Distribuição de genêro:");
-            System.out.println("5 - Sair do bar:");
-            System.out.println("0 - Sair do menu.");
+            System.out.println("5 - Sair do bar usando CPF:");
             int resposta= in.nextInt();
             switch(resposta){
                 case 0:
@@ -40,6 +40,7 @@ public class App{
                     rede1.buscarPorCpf(cpf1);
                     break;
                 case 4:
+                    rede1.divisaoPorGenero();
                     break;
                 case 5:
                         System.out.println("Digite seu CPF:");
@@ -48,7 +49,7 @@ public class App{
                         rede1.sair(cpf);
                     break;
                 default:
-                    System.out.println("Opção indisponível.");
+                        System.out.println("Opção indisponível.");
                     break;
             }
             
