@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class App{
     public static void main(String []args){
         /*
@@ -11,9 +12,47 @@ public class App{
          */
 
         RedeBar rede1 = new RedeBar();
+        Scanner in = new Scanner(System.in);
+        int rodando= 1;
 
-        rede1.abrirBar();
-        rede1.listarClientes();
+        while (rodando == 1) {
+            System.out.println("1 - Entrar no bar:");
+            System.out.println("2 - Listar clientes:");
+            System.out.println("3 - Buscar por CPF:");
+            System.out.println("4 - Distribuição de genêro:");
+            System.out.println("5 - Sair do bar:");
+            System.out.println("0 - Sair do menu.");
+            int resposta= in.nextInt();
+            switch(resposta){
+                case 0:
+                    rodando= 0;
+                    break;
+                case 1:
+                    rede1.entrar();
+                    break;
+                case 2: 
+                    rede1.listar();
+                    break;
+                case 3:
+                    System.out.println("Digite o CPF para busca:");
+                    in.nextLine();
+                    String cpf1= in.nextLine();
+                    rede1.buscarPorCpf(cpf1);
+                    break;
+                case 4:
+                    break;
+                case 5:
+                        System.out.println("Digite seu CPF:");
+                        in.nextLine();
+                        String cpf= in.nextLine();
+                        rede1.sair(cpf);
+                    break;
+                default:
+                    System.out.println("Opção indisponível.");
+                    break;
+            }
+            
+        }
 
 
     }

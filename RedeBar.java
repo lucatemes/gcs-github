@@ -8,7 +8,7 @@ public class RedeBar {
         
         this.pessoa = new ArrayList<>();
     }
-    public void abrirBar(){
+    public void entrar(){
         int i=1;
         System.out.println("Bar aberto. Ao entrar no bar informe seus dados. (Digite a quantidade de pessoas que irão entrar no bar)");
         Scanner in = new Scanner(System.in);
@@ -30,18 +30,52 @@ public class RedeBar {
         }
     }
 
-    public void listarClientes(){
+    public void listar(){
         for(int i=0; i < pessoa.size(); i++){
             System.out.println("Cliente " + i);
+            System.out.print("Nome: ");
             System.out.println(pessoa.get(i).getNome());
             System.out.print("CPF: ");
             System.out.println(pessoa.get(i).getCpf());
             System.out.print("Idade: ");
-            System.out.println(pessoa.get(i).getIdade());;
+            System.out.println(pessoa.get(i).getIdade());
             System.out.print("Genêro: ");
-            System.out.println(pessoa.get(i).getGenero());;
+            System.out.println(pessoa.get(i).getGenero());
             System.out.println("----------------------");
         }
+    }
+
+    public boolean sair(String cpf){
+        for(Pessoa lista : pessoa){
+            if(cpf.equals(lista.getCpf())){
+                System.out.println(lista.getNome() + " saindo.");
+                pessoa.remove(lista);
+                return true;
+            }
+        }
+        System.out.println("Nenhum cpf encontrado!");
+        return false;
+        
+    }
+
+    public boolean buscarPorCpf(String cpf){
+        for(Pessoa lista : pessoa){
+            if(cpf.equals(lista.getCpf())){
+                System.out.print("Nome: ");
+                System.out.println(lista.getNome());
+                System.out.print("CPF: ");
+                System.out.println(lista.getCpf());
+                System.out.print("Idade: ");
+                System.out.println(lista.getIdade());
+                System.out.print("Genêro: ");
+                System.out.println(lista.getGenero());
+                System.out.println("----------------------");
+                return true;
+            }
+        }
+        System.out.println("Nenhum cpf encontrado!");
+        return false;
+        
     }
 
 
