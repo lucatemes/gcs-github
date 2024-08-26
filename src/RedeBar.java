@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -31,8 +32,10 @@ public class RedeBar {
     }
 
     public void listar(){
+        int x;
         for(int i=0; i < pessoa.size(); i++){
-            System.out.println("Cliente " + i);
+            x= i +1;
+            System.out.println("Cliente " + x);
             System.out.print("Nome: ");
             System.out.println(pessoa.get(i).getNome());
             System.out.print("CPF: ");
@@ -85,7 +88,7 @@ public class RedeBar {
         int porcentagemM;
         int porcentagemF;
         for(Pessoa lista : pessoa){
-            if(lista.getGenero() == 'M'){
+            if(lista.getGenero() == 'M' || lista.getGenero() == 'm'){
                 m++;
             }else{
                 f++;
